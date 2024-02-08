@@ -22,8 +22,8 @@ int main(int argv, char* argc[])
     double En0 = En;
     double En1 = En;
     fout.open("./results/En_"+to_string(n)+".dat");
-    for (int ib=0; ib<51; ib++){
-      double eB = 0.02*ib;
+    for (int ib=0; ib<101; ib++){
+      double eB = 0.05*ib;
       double corr = 0;
       En = 2*En0 - En1;
       for(int i=0; i<N_iteration; i++){
@@ -36,7 +36,7 @@ int main(int argv, char* argc[])
       if(ib==0){
         En1=En;
         ipm.PrintWaveFunction("./results/WFvac_"+to_string(n));
-      }else if(ib==50){
+      }else if(ib==100){
         ipm.PrintWaveFunction("./results/WFB_"+to_string(n));
       }
       En0 = En;  // very last eB
