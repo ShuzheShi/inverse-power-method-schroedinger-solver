@@ -36,6 +36,8 @@ int main(int argv, char* argc[])
       if(ib==0){
         En1=En;
         ipm.PrintWaveFunction("./results/WFvac_"+to_string(n));
+      }else if(ib==50){
+        ipm.PrintWaveFunction("./results/WFB_"+to_string(n));
       }
       En0 = En;  // very last eB
       fout << eB <<"\t"<< En << endl;;
